@@ -1,0 +1,447 @@
+body {
+  overflow-x: hidden;
+}
+
+/* BOX SHADOW */
+.btn:focus,
+.form-control:focus {
+  box-shadow: none;
+}
+
+/**
+ * index 
+ */
+
+/* NAVBAR */
+.navbar .nav-link {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.navbar .nav-item.active {
+  border-left: #444 3px solid;
+}
+
+/* SHOWCASE */
+.carousel-item {
+  height: 458px;
+}
+
+.carousel-image-1 {
+  background: url("../img/image1.jpeg");
+  background-size: cover;
+}
+
+.carousel-image-2 {
+  background: url("../img/image2.jpeg");
+  background-size: cover;
+}
+
+.carousel-image-3 {
+  background: url("../img/image3.jpeg");
+  background-size: cover;
+}
+
+.carousel-image-4 {
+  background: url("../img/image4.jpeg");
+  background-size: cover;
+}
+
+.carousel-image-5 {
+  background: url("../img/image5.jpeg");
+  background-size: cover;
+}
+
+/* HOME HEADING */
+#home-heading {
+  position: relative;
+  min-height: 200px;
+  background: url("../img/city.jpeg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff;
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* INFO */
+#info img {
+  width: 200px;
+  height: 200px;
+}
+
+/* VIDEO */
+#video-play {
+  position: relative;
+  min-height: 200px;
+  background: url("../img/media.jpeg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 0 -300px;
+  text-align: center;
+  color: #fff;
+}
+
+#video-play a {
+  color: #fff;
+}
+
+/**
+ * menu
+ */
+
+/* MENU */
+#menu .card {
+  border: none;
+}
+
+#menu blockquote {
+  font-size: 16px;
+}
+
+#menu button {
+  position: relative;
+  background-color: #e96188;
+  color: #fff;
+  border-radius: 100px;
+  border-color: #e96188;
+  padding: 8px 24px;
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 0.3s, 0.3s, 0.3s, 0.8s;
+  transition-timing-function: ease-in-out;
+  /* display: inline-flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+#menu button:hover,
+#menu button:focus {
+  background-color: #df1f56;
+  color: #fff;
+  border-color: #df1f56;
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+#menu button:hover:after,
+#menu button:focus:after {
+  content: "";
+  border: 1px solid;
+  border-color: inherit;
+  width: 100%;
+  height: 100%;
+  transition: border-radius 0.3s;
+  border-radius: 100px;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  opacity: 1;
+  animation: 1s btn-animation linear infinite;
+}
+
+#btn-clear {
+  position: relative;
+  background: #b62e2e;
+  color: #fff;
+  border-radius: 100px;
+  border-color: #b62e2e;
+  font-style: normal;
+  font-weight: 500;
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 0.3s, 0.3s, 0.3s, 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+#btn-clear:hover,
+#btn-clear:focus {
+  background-color: #880000;
+  color: #fff;
+  border-color: #880000;
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+#btn-clear:hover:after,
+#btn-clear:focus:after {
+  content: "";
+  border: 1px solid;
+  border-color: inherit;
+  width: 100%;
+  height: 100%;
+  transition: border-radius 0.3s;
+  border-radius: 100px;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  opacity: 1;
+  animation: 1s btn-animation linear infinite;
+}
+
+#btn-check,
+#btn-arrive {
+  position: relative;
+  background: #2eb6b6;
+  color: #fff;
+  border-radius: 100px;
+  border-color: #2eb6b6;
+  font-style: normal;
+  font-weight: 500;
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 0.3s, 0.3s, 0.3s, 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+#btn-check:hover,
+#btn-arrive:hover,
+#btn-arrive:focus {
+  background-color: #008888;
+  color: #fff;
+  border-color: #008888;
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+#btn-check:hover:after,
+#btn-arrive:hover:after,
+#btn-arrive:focus:after {
+  content: "";
+  border: 1px solid;
+  border-color: inherit;
+  width: 100%;
+  height: 100%;
+  transition: border-radius 0.3s;
+  border-radius: 100px;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  opacity: 1;
+  animation: 1s btn-animation linear infinite;
+}
+
+#menu-footer {
+  background: #fff;
+  color: #333;
+  height: 50px;
+  border-top: #999 0.75px solid;
+}
+
+/* LOG IN & SIGN UP*/
+#log-in span,
+#sign-up span {
+  background-color: transparent;
+}
+
+#btn-login,
+#btn-signup {
+  position: relative;
+  background: #5b7bd6;
+  color: #fff;
+  border-radius: 100px;
+  border-color: #5b7bd6;
+  font-style: normal;
+  font-weight: 500;
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 0.3s, 0.3s, 0.3s, 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+#btn-login:hover,
+#btn-login:focus,
+#btn-signup:hover,
+#btn-signup:focus {
+  background-color: #2e52b6;
+  color: #fff;
+  border-color: #2e52b6;
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+#btn-login:hover:after,
+#btn-login:focus:after,
+#btn-signup:hover:after,
+#btn-signup:focus:after {
+  content: "";
+  border: 1px solid;
+  border-color: inherit;
+  width: 100%;
+  height: 100%;
+  transition: border-radius 0.3s;
+  border-radius: 100px;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  opacity: 1;
+  animation: btn-animation 1s linear infinite;
+}
+
+/**  
+ * shoppingcart
+ */
+
+/* SHOPPING CART */
+#shopping-cart {
+  background-color: #f5f5f5;
+}
+
+#shopping-cart #card {
+  border-color: #fff;
+}
+
+#card .btn {
+  background-color: transparent;
+}
+
+#card .btn:hover {
+  animation: spin 3s linear infinite;
+}
+
+#btn-menu {
+  position: relative;
+  background: #6c4c4c;
+  color: #fff;
+  border-radius: 100px;
+  border-color: #6c4c4c;
+  font-style: normal;
+  font-weight: 500;
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 0.3s, 0.3s, 0.3s, 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+#btn-menu:hover,
+#btn-menu:focus {
+  background-color: #421919;
+  color: #fff;
+  border-color: #421919;
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+#btn-menu:hover:after,
+#btn-menu:focus:after {
+  content: "";
+  border: 1px solid;
+  border-color: inherit;
+  width: 100%;
+  height: 100%;
+  transition: border-radius 0.3s;
+  border-radius: 100px;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  opacity: 1;
+  animation: btn-animation 1s linear infinite;
+}
+
+#time:invalid {
+  border-color: #dc3545;
+}
+
+#time:valid {
+  border-color: #28a745;
+}
+
+#shoppingcart-footer {
+  background: #fff;
+  color: #333;
+  height: 50px;
+  border-top: #999 0.75px solid;
+}
+
+/**  
+ * billinginformation
+ */
+
+/* BILLING INFORMATION */
+#billing-information {
+  background-color: #f5f5f5;
+}
+
+#billing-information .card {
+  border-color: #fff;
+}
+
+#billing-information a {
+  position: relative;
+  background: #6c4c4c;
+  color: #fff;
+  border-radius: 100px;
+  border-color: #6c4c4c;
+  font-style: normal;
+  font-weight: 500;
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 0.3s, 0.3s, 0.3s, 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+#billing-information a:hover,
+#billing-information a:focus {
+  background-color: #421919;
+  color: #fff;
+  border-color: #421919;
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+#billing-information a:hover:after,
+#billing-information a:focus:after {
+  content: "";
+  border: 1px solid;
+  border-color: inherit;
+  width: 100%;
+  height: 100%;
+  transition: border-radius 0.3s;
+  border-radius: 100px;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  opacity: 1;
+  animation: btn-animation 1s linear infinite;
+}
+
+/**
+ *  order
+ */
+
+/* ORDERS */
+#orders {
+  background-color: #f5f5f5;
+}
+
+#orders .card {
+  border-color: #fff;
+}
+
+#orders button {
+  background-color: transparent;
+}
+
+#orders button:hover {
+  animation: spin 3s linear infinite;
+}
+
+/* Footer */
+#main-footer {
+  background: #000;
+  color: white;
+}
+
+@keyframes btn-animation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

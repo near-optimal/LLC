@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Late Latte Cafe</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a href="/" class="navbar-brand">Late Latte Cafe</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu" class="nav-link">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="login-link" href="login" class="nav-link">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="signup-link" href="signup" class="nav-link">Sign Up</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="shoppingcart" class="nav-link">Shopping Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SHOPPING CART -->
+    <section id="shopping-cart" class="py-5 text-center">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-12 mb-3" th:each="coffees :${coffeesList}" th:id="'div-'+${coffees.cId}">
+                    <div id="card" class="card">
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-12">
+                                    <h6 th:text="'ProductName: ' + ${coffees.productName}" class="card-title"></h6>
+                                </div>
+                                <div class="col-6 col-sm-8 col-lg-6">
+                                    <img th:src="'img/coffee' + ${coffees.cId} + '.jpeg'" alt="" class="img fluid card-img-top">
+                                </div>
+                                <div class="col-6 col-sm-8 col-lg-6">
+                                    <p th:text="'Price: ' + ${coffees.price}"></p>
+                                    <p th:text="'Quantity: ' + ${coffees.quantity}"></p>
+                                    <p>Subtotal:
+                                        <span th:text="'$' + ${coffees.price} * ${coffees.quantity}" class="text-danger h6">
+                                        </span>
+                                    </p>
+                                    <button th:id="'btn-'+${coffees.cId}" class="btn">
+                                        <span>
+                                            <i class="fas fa-trash"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="shoppingcart-footer" class="text-center fixed-bottom">
+        <div class="container">
+            <div class="row ">
+                <div class="col">
+                    <h5 th:text="${shoppingCart}" class="float-left mt-2"></h5>
+                    <p th:if="${items}" class="float-left mt-2">total price:
+                        <span th:text="'$' + ${totalPrice}" class="text-danger h5"></span>
+                    </p>
+                    <button id="btn-arrive" th:if="${items}" class="btn mt-1 float-right" data-toggle="modal">Check</button>
+                    <a id="btn-menu" th:href="@{/menu}" class="btn mt-1 mr-2 float-right">Menu</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ARRIVAL TIME MODAL -->
+    <div class="modal" id="arrivalTimeModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">What time will you arrive? (
+                        <span id="currentTime"></span> to 22:50)</h6>
+                    <button class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="form-group">
+                        <form class="form-inline">
+                            <input id="time" type="time" max="22:50" class="form-control" required autofocus>
+                            <button id="btn-check" class="btn mt-sm-0 mt-3 ml-3">Submit</button>
+                            <p id="isValidTime" class="ml-3 mt-4 mt-md-3 text-danger"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLOSE MODAL -->
+    <div class="modal" id="closeModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="display-4 modal-title w-100 text-center">Business Hours</p>
+                    <button class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <th>Monday</th>
+                                <td>6:50 to 22:50</td>
+                            </tr>
+                            <tr>
+                                <th>Tuesday</th>
+                                <td>6:50 to 22:50</td>
+                            </tr>
+                            <tr>
+                                <th>Wednesday</th>
+                                <td>6:50 to 22:50</td>
+                            </tr>
+                            <tr>
+                                <th>Thursday</th>
+                                <td>6:50 to 22:50</td>
+                            </tr>
+                            <tr>
+                                <th>Friday</th>
+                                <td>6:50 to 22:50</td>
+                            </tr>
+                            <tr>
+                                <th>Saturday</th>
+                                <td>6:50 to 22:50</td>
+                            </tr>
+                            <tr>
+                                <th>Sunday</th>
+                                <td>6:50 to 22:50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script th:inline="javascript">
+
+        $(document).ready(function () {
+            var loginFlag = [[${ loginFlag }]];
+
+            if (loginFlag == 1) {
+                $('#login-link').text('log out');
+                $('#login-link').attr('href', 'logout');
+                $('#signup-link').text('orders');
+                $('#signup-link').attr('href', 'orders');
+            }
+        });
+
+        $('#card button').click(function (e) {
+            var bId = e.currentTarget.id;
+            var cId = bId.substr(4)
+            $('#div-' + cId).hide();
+
+            $.ajax({
+                type: 'POST',
+                url: '/deletecoffees?cId=' + cId,
+                error: function () {
+                    console.log('error');
+                },
+                success: function () {
+                    location.reload();
+                }
+            })
+        });
+
+        $('#btn-arrive').click(function () {
+            updateCurrentTime();
+            setInterval(updateCurrentTime, 1000);
+            var date = new Date();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+
+            if ((hours > 22 || hours < 6) || (hours == 22 && minutes > 50) || (hours == 6 && minutes < 50)) {
+                $('#btn-arrive').attr('data-target', '#closeModal');
+            }
+            else {
+                $('#btn-arrive').attr('data-target', '#arrivalTimeModal');
+            }
+        });
+
+        $('#btn-check').click(function (e) {
+            e.preventDefault();
+            var date = new Date();
+            var hours = addZero(date.getHours());
+            var minutes = addZero(date.getMinutes());
+            var arrivalTime;
+
+            $('#time').attr('min', hours + ':' + minutes)
+
+            $('#time')[0].addEventListener('input', function () {
+                if (!($('#time')[0].checkValidity())) {
+                    $('#isValidTime').text('invalid value');
+                }
+                else {
+                    $('#isValidTime').text('');
+                }
+            });
+
+            if ($('#time')[0].checkValidity()) {
+                arrivalTime = $('#time').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/check?arrivalTime=' + arrivalTime,
+                    error: function () {
+                        console.log('error');
+                    },
+                    success: function () {
+                        location.href = '/billinginformation';
+                    }
+                })
+            }
+            else {
+                if ($('#time').val() == '') {
+                    $('#isValidTime').text('Please fill out this field.');
+                    $('#time').focus();
+                }
+                else {
+                    $('#isValidTime').text('invalid value');
+                }
+            }
+        });
+
+        function addZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+
+            return i;
+        }
+
+        function updateCurrentTime() {
+            var date = new Date();
+            var hours = addZero(date.getHours());
+            var minutes = addZero(date.getMinutes());
+
+            $('#currentTime').text(hours + ":" + minutes);
+        }
+
+    </script>
+</body>
+
+</html>

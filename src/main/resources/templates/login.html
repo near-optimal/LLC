@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Late Latte Cafe</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a href="/" class="navbar-brand">Late Latte Cafe</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu" class="nav-link">Menu</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="login" class="nav-link">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="signup" class="nav-link">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shoppingcart" class="nav-link">Shopping Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LOG IN -->
+    <section id="log-in" class="py-5 text-center">
+        <div class="container pt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <form th:action="@{/login}" method="post" autocomplete="off">
+                        <div class="form-group">
+                            <p th:if="${invalidCredentials}" th:text="${wrong}" class="text-danger"></p>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control " name="name" placeholder="name*" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </div>
+                                <input type="password" class="form-control" name="password" placeholder="password*" required>
+                            </div>
+                            <button id="btn-login" type="submit" class="btn">Log in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--     SOCIAL 
+    <section id="social" class="text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <h6>Welcome To Late Latte Cafe</h6>
+                    <h2 class="display-5">Share Our Coffeehouse</h2>
+                    <div>
+                        <span>
+                            <a href="#">
+                                <i class="fab fa-facebook fa-2x" style="background-color: indianred; color:white;"></i>
+                            </a>
+                        </span>
+                        <span>
+                            <a href="/index.html" class="fab fa-twitter fa-2x"></a>
+                        </span>
+                        <span>
+                            <i class="fab fa-google fa-2x"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="p-4 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>Copyright &copy;
+                        <span id="year"></span> Late Latte Cafe</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script>
+
+        // Get the current year for the copyright
+        $('#year').text(new Date().getFullYear());
+
+    </script>
+</body>
+
+</html>

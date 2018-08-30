@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Late Latte Cafe</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a href="/" class="navbar-brand">Late Latte Cafe</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu" class="nav-link">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="login-link" href="login" class="nav-link">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="signup-link" href="signup" class="nav-link">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shoppingcart" class="nav-link">Shopping Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SHOWCASE SLIDER -->
+    <section id="showcase">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item carousel-image-1 active">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block text-right mb-5">
+                            <h1 class="display-3">Monday</h1>
+                            <p class="lead">
+                                Life begins after coffee.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image-2">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block text-left mb-5">
+                            <h1 class="display-3">Tuesday</h1>
+                            <p class="lead">
+                                A yawn is a silent scream for coffee.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image-3">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block mb-5">
+                            <h1 class="display-3">Wednesday</h1>
+                            <p class="lead">
+                                Given enought coffee, I could rule the world.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image-4">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block text-left mb-5">
+                            <h1 class="display-3">Thursday</h1>
+                            <p class="lead">
+                                But first coffee.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image-5">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block text-right mb-5">
+                            <h1 class="display-3">Friday</h1>
+                            <p class="lead">
+                                Rise and grind.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a href="#myCarousel" data-slide="next" class="carousel-control-next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- HOME ICONS SECTION -->
+    <section id="home-icons" class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <i class="fas fa-coffee fa-3x mb-2"></i>
+                    <h3 class="mb-3">Blue Mountain coffee</h3>
+                    <p>Coffee grown in the specially designated area of the Blue Mountains. The coffee has blue green color,
+                        good acidity, intense aroma, fairly good body, clean.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <i class="far fa-lightbulb fa-3x mb-2"></i>
+                    <h3 class="mb-3">Open 24 hours</h3>
+                    <p>Whenever the need strikes, we’re open and ready to serve you.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <i class="fas fa-map-marker-alt fa-3x mb-2"></i>
+                    <h3 class="mb-3">Located next to business district</h3>
+                    <p>Have a lie in and still get to your meeting with plenty of time to spare without the aggravation of negotiating
+                        an unfamiliar city.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOME HEADING SECTION -->
+    <section id="home-heading" class="p-5">
+        <div class="dark-overlay">
+            <div class="row">
+                <div class="col">
+                    <div class="container mt-5 mt-md-4">
+                        <h1>Are You Ready To Drink The Coffee?</h1>
+                        <p class="d-none d-md-block">
+                            Jamaican Blue Mountain Coffee is a globally protected certification mark, meaning only coffee certified by the Coffee Industry
+                            Board of Jamaica can be labeled as such. It comes from a recognised growing region in the Blue
+                            Mountain region of Jamaica, and its cultivation is monitored by the Coffee Industry Board of
+                            Jamaica.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section id="info" class="py-5 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="img/manager.jpeg" alt="" class="img-fluid rounded-circle mb-2">
+                    <h4>Dylan Hsueh</h4>
+                    <small>Store Manager</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO PLAY -->
+    <section id="video-play">
+        <div class="dark-overlay">
+            <div class="row">
+                <div class="col">
+                    <div class="container py-4 py-md-5">
+                        <a href="#" class="video" data-video="http://www.youtube.com/embed/QFWdtitL588" data-toggle="modal" data-target="#videoModal">
+                            <i class="fas fa-play fa-3x"></i>
+                        </a>
+                        <h1>See Jamaica Blue Mountain Coffee</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h1 class="text-center">Photo Gallery</h1>
+            <p class="text-center">Check out our photos</p>
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <a href="img/image6.jpeg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                        <img src="img/image6.jpeg" alt="" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="img/image7.jpeg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                        <img src="img/image7.jpeg" alt="" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="img/image8.jpeg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                        <img src="img/image8.jpeg" alt="" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <a href="img/image9.jpeg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                        <img src="img/image9.jpeg" alt="" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="img/image10.jpeg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                        <img src="img/image10.jpeg" alt="" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="img/image11.jpeg" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560">
+                        <img src="img/image11.jpeg" alt="" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section id="newsletter" class="text-center p-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Sign Up For Our Newsletter</h1>
+                    <p>Sign up to hear from us about specials, sales, and events.</p>
+                    <form class="form-inline justify-content-center">
+                        <input type="text" class="form-control mb-2 mr-2" placeholder="Enter Name" required>
+                        <input type="email" class="form-control mb-2 mr-2" placeholder="Enter Email" required>
+                        <button class="btn btn-primary mb-2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="text-center p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>Copyright &copy;
+                        <span id="year"></span> Late Latte Cafe</p>
+                    <input id="login-flag" type="hidden" th:value="${loginFlag}">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VIDEO MODAL -->
+    <div class="modal fade" id="videoModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    <iframe src="" frameborder="0" height="350" width="100%" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+    <script th:inline="javascript">
+
+        // Get the current year for the copyright
+        $('#year').text(new Date().getFullYear());
+
+        // Configure Slider
+        $('.carousel').carousel({
+            interval: 6000,
+            pause: 'hover'
+        });
+
+        // Lightbox Init
+        $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+
+        // Video Play
+        $(function () {
+            // Auto play modal video
+            $(".video").click(function () {
+                var theModal = $(this).data("target"),
+                    videoSRC = $(this).attr("data-video"),
+                    videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+                $(theModal + ' iframe').attr('src', videoSRCauto);
+                $(theModal + ' button.close').click(function () {
+                    $(theModal + ' iframe').attr('src', videoSRC);
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            var loginFlag = [[${ loginFlag }]];
+
+            if (loginFlag == 1) {
+                $('#login-link').text('log out');
+                $('#login-link').attr('href', 'logout');
+                $('#signup-link').text('orders');
+                $('#signup-link').attr('href', 'orders');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
